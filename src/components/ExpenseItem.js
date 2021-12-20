@@ -7,6 +7,7 @@ const ExpenseItem = () => {
     const date = expenseDate.getUTCDate();
     const year = expenseDate.getFullYear();
     console.log("Date : " + date);
+    console.log("Month : ", month);
     return (
         <div className='expense-item'>
             <div>
@@ -20,5 +21,4 @@ const ExpenseItem = () => {
         </div>
     )
 }
-
 export default ExpenseItem
