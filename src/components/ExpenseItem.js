@@ -1,24 +1,18 @@
+import ExpenseDate from './ExpenseDate'
+import Card from './Card';
 import './ExpenseItem.css';
-const ExpenseItem = () => {
+const ExpenseItem = (props) => {
     const expenseDate = new Date(2021, 11, 12);
-    const expenseTitle = "Car insurance";
-    const expenseAmount = 300;
-    const month = expenseDate.toLocaleString('en-US', { month: 'long' });
-    const date = expenseDate.getUTCDate();
-    const year = expenseDate.getFullYear();
-    console.log("Date : " + date);
-    console.log("Month : ", month);
+    const expenseTitle = props.title;
+    const expenseAmount = props.amount;
+
     return (
-        <div className='expense-item'>
-            <div>
-                <div >{month}</div>
-                <div>{year}</div>
-                <div>{date}</div>
-            </div>
+        <Card className='expense-item'>
+            <ExpenseDate date={props.date} />
             <div className='expense-item__description '>
                 <h2>{expenseTitle}</h2>
                 <div className='expense-item__price'>{expenseAmount}</div></div>
-        </div>
+        </Card>
     )
 }
 export default ExpenseItem
